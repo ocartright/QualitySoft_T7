@@ -1,7 +1,6 @@
 QualitySoft_T7
+Contact List Project
 ==============
-
-QualitySoft Project, Team 7, Contact List
 
 Important Deadlines
 
