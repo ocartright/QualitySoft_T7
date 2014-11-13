@@ -46,6 +46,13 @@ public:
 	void main();
 };
 
+class Application {
+private:
+
+public:
+	int main(int size, char** arguments);
+};
+
 int main() {
 
 
