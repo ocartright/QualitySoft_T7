@@ -43,7 +43,7 @@ class Console {
 private:
 
 public:
-
+	void main();
 };
 
 int main() {
