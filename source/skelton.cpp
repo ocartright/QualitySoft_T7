@@ -3,6 +3,7 @@
 #include <vector>
 using namespace std;
 
+//represents a contact which its information
 class Contact {
 private:
    //contact information
@@ -26,6 +27,7 @@ public:
     void setNotes(const string &notes);
 }
 
+// manages all contacts by creating, modifying, deleting and granting access to them
 class ContactManager {
 private:
     vector<Contact> contacts;
@@ -39,6 +41,7 @@ public:
     Contact& getContact();
 };
 
+//console interface
 class Console {
 private:
 
@@ -46,6 +49,7 @@ public:
 	void main();
 };
 
+//represents the program as an object
 class Application {
 private:
 
