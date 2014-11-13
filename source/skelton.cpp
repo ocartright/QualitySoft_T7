@@ -10,6 +10,8 @@ private:
    string firstName, lastName, streetAddress, email, phone, notes;
 public:
     Contact();
+    Contact(const string& firstName, const string& lastName, const string& streetAddress, const string& email, 
+    		const string& phone, const string& notes);
 
     //functions
     const string& getFirstName() const;
@@ -32,17 +34,28 @@ class ContactManager {
 private:
     vector<Contact> contacts;
 public:
-    //functions
-    /* create a new Contact object */
-    void makeNewContact();
-    /* access and modify a Contact object */
-    const Contact& getContact() const;
-    /* access and modify a Contact object */
-    Contact& getContact();
+
+	//creates new contact and returns a reference
+	Contact& add(const Contact& contact=Contact());
+	
+	//removes a contact by given element ( e.g. id )
+	void remove(std::size_t element);
+	
+	//get a contact by given element ( e.g. id )
+	Contact& getContact();
+	const Contact& getContact() const;
 };
 
 //console interface
 class Console {
+private:
+
+public:
+	void main();
+};
+
+//gui
+class GraphicalUserInterface {
 private:
 
 public:
