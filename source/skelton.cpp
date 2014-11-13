@@ -38,6 +38,8 @@ class ContactManager {
 private:
     vector<Contact> contacts;
 public:
+	// returns amount of contacts
+	size_t getSize() const;
 
 	//creates new contact and returns a reference
 	Contact& add(const Contact& contact=Contact());
