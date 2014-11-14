@@ -109,8 +109,6 @@ public:
 	int main(int size, char** arguments);
 };
 
-int main() {
-
-
-    return 0;
+int main(int size, char** arguments) {
+	return Application().main(size, arguments);
 }
