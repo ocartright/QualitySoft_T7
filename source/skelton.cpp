@@ -60,9 +60,33 @@ public:
 //console interface
 class Console {
 private:
+	Application & application;
 
 public:
+	Console(Application & application);
+
 	void main();
+	
+	//methods to show a contact by getting the contact with console input, itself, element or fullName
+	void showContact() const;
+	void showContact(const Contact& contact) const;
+	void showContact(std::site_t element) const;
+	void showContact(const string& fullName) const;
+	
+	//methods to remove a contact by getting the contact with console input, itself, element or fullName
+	void removeContact();
+	void removeContact(Contact & contact);
+	void removeContact(std::size_t element);
+	void removeContact(const string& fullName);
+	
+	//methods to modify a contact by getting the contact with console input, itself, element or fullName
+	void modifyContact();
+	void modifyContact(Contact & contact);
+	void modifyContact(std::size_t element);
+	void modifyContact(const string& fullName);
+	
+	//method to add a contact
+	void addContact();
 };
 
 //gui
