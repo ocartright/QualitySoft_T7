@@ -33,7 +33,7 @@ public:
     void setEmail(const string& email);
     void setPhone(const string& phone);
     void setNotes(const string& notes);
-}
+};
 
 // manages all contacts by creating, modifying, deleting and granting access to them
 class ContactManager {
