@@ -67,6 +67,10 @@ public:
 
 	void main();
 	
+	//methods to get a contact
+	Contact & getContact() ;
+	const Contact & getContact() const;
+	
 	//methods to show a contact by getting the contact with console input, itself, element or fullName
 	void showContact() const;
 	void showContact(const Contact& contact) const;
