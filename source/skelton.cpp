@@ -74,7 +74,7 @@ public:
 	//methods to show a contact by getting the contact with console input, itself, element or fullName
 	void showContact() const;
 	void showContact(const Contact& contact) const;
-	void showContact(std::site_t element) const;
+	void showContact(std::size_t element) const;
 	void showContact(const string& fullName) const;
 	
 	//methods to show all contacts
