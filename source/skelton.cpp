@@ -77,6 +77,11 @@ public:
 	void showContact(std::site_t element) const;
 	void showContact(const string& fullName) const;
 	
+	//methods to show all contacts
+	void showContacts() const;
+	void showContactsByFirstName(const string& firstName) const;
+	void showContactsByLastName(const string& lastName) const;
+	
 	//methods to remove a contact by getting the contact with console input, itself, element or fullName
 	void removeContact();
 	void removeContact(Contact & contact);
