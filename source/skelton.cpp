@@ -6,16 +6,17 @@ using namespace std;
 //represents a contact which its information
 class Contact {
 private:
-   //contact information
    string firstName, lastName, streetAddress, email, phone, notes;
+   
 public:
+	//consutructors
     Contact();
     Contact(const string& fullName, const string& streetAddress, const string& email, 
     		const string& phone, const string& notes);
     Contact(const string& firstName, const string& lastName, const string& streetAddress, const string& email, 
     		const string& phone, const string& notes);
 
-    //functions
+    //getters for private members
     string getFullName() const;
     const string& getFirstName() const;
     const string& getLastName() const;
@@ -24,6 +25,7 @@ public:
     const string& getPhone() const;
     const string& getNotes() const;
 
+	//setters for private members
 	void setFullName(const string& fullName);
     void setFirstName(const string& firstName);
     void setLastName(const string& lastName);
@@ -37,6 +39,7 @@ public:
 class ContactManager {
 private:
     vector<Contact> contacts;
+    
 public:
 	// returns amount of contacts
 	size_t getSize() const;
@@ -63,38 +66,40 @@ private:
 	Application & application;
 
 public:
+	//constructor
 	Console(Application & application);
 
+	//main method
 	void main();
 	
-	//methods to get a contact
+	//get a contact
 	Contact & getContact() ;
 	const Contact & getContact() const;
 	
-	//methods to show a contact by getting the contact with console input, itself, element or fullName
+	//show a contact by getting the contact with console input, itself, element or fullName
 	void showContact() const;
 	void showContact(const Contact& contact) const;
 	void showContact(std::size_t element) const;
 	void showContact(const string& fullName) const;
 	
-	//methods to show all contacts
+	//show all contacts
 	void showContacts() const;
 	void showContactsByFirstName(const string& firstName) const;
 	void showContactsByLastName(const string& lastName) const;
 	
-	//methods to remove a contact by getting the contact with console input, itself, element or fullName
+	//contact by getting the contact with console input, itself, element or fullName
 	void removeContact();
 	void removeContact(Contact & contact);
 	void removeContact(std::size_t element);
 	void removeContact(const string& fullName);
 	
-	//methods to modify a contact by getting the contact with console input, itself, element or fullName
+	//modify a contact by getting the contact with console input, itself, element or fullName
 	void modifyContact();
 	void modifyContact(Contact & contact);
 	void modifyContact(std::size_t element);
 	void modifyContact(const string& fullName);
 	
-	//method to add a contact
+	//add a contact
 	void addContact();
 };
 
@@ -103,6 +108,7 @@ class GraphicalUserInterface {
 private:
 
 public:
+	// main method
 	void main();
 };
 
@@ -112,9 +118,11 @@ private:
 	ContactManager & contactManager;
 
 public:
+	//getter for contactManager
 	ContactManager& getContactManager();
 	const ContactManager& getContactManager() const;
 
+	//method main
 	int main(int size, char** arguments);
 };
 
