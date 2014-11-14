@@ -100,8 +100,12 @@ public:
 //represents the program as an object
 class Application {
 private:
+	ContactManager & contactManager;
 
 public:
+	ContactManager& getContactManager();
+	const ContactManager& getContactManager() const;
+
 	int main(int size, char** arguments);
 };
 
