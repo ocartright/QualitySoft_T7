@@ -5,31 +5,31 @@
 //represents a contact which its information
 class Contact {
 private:
-   string firstName, lastName, streetAddress, email, phone, notes;
+   std::string firstName, lastName, streetAddress, email, phone, notes;
    
 public:
 	//constructors
 	Contact();
-	Contact(const string& fullName, const string& streetAddress, const string& email, 
-			const string& phone, const string& notes);
-	Contact(const string& firstName, const string& lastName, const string& streetAddress, const string& email, 
-			const string& phone, const string& notes);
+	Contact(const std::string& fullName, const std::string& streetAddress, const std::string& email, 
+			const std::string& phone, const std::string& notes);
+	Contact(const std::string& firstName, const std::string& lastName, const std::string& streetAddress, const std::string& email, 
+			const std::string& phone, const std::string& notes);
 
 	//getters for private members
-	string getFullName() const;
-	const string& getFirstName() const;
-	const string& getLastName() const;
-	const string& getStreetAddress() const;
-	const string& getEmail() const;
-	const string& getPhone() const;
-	const string& getNotes() const;
+	std::string getFullName() const;
+	const std::string& getFirstName() const;
+	const std::string& getLastName() const;
+	const std::string& getStreetAddress() const;
+	const std::string& getEmail() const;
+	const std::string& getPhone() const;
+	const std::string& getNotes() const;
 	
 	//setters for private members
-	void setFullName(const string& fullName);
-	void setFirstName(const string& firstName);
-	void setLastName(const string& lastName);
-	void setStreetAddress(const string& streetAddress);
-	void setEmail(const string& email);
-	void setPhone(const string& phone);
-	void setNotes(const string& notes);
+	void setFullName(const std::string& fullName);
+	void setFirstName(const std::string& firstName);
+	void setLastName(const std::string& lastName);
+	void setStreetAddress(const std::string& streetAddress);
+	void setEmail(const std::string& email);
+	void setPhone(const std::string& phone);
+	void setNotes(const std::string& notes);
 };

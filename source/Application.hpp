@@ -1,12 +1,11 @@
 #pragma once
 
-//forward declaration
-class ContactManager;
+#include "ContactManager.hpp"
 
 //represents the program as an object
 class Application {
 private:
-	ContactManager & contactManager;
+	ContactManager contactManager;
 
 public:
 	//getter for contactManager

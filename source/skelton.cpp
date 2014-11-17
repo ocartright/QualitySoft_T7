@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+/*
 using namespace std;
 
 //represents a contact which its information
@@ -128,7 +129,7 @@ public:
 	//main method
 	int main(int size, char** arguments);
 };
-
+*
 int main(int size, char** arguments) {
 	return Application().main(size, arguments);
-}
+}*/
