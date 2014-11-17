@@ -13,7 +13,7 @@ public:
 	size_t getSize() const;
 
 	//creates new contact and returns a reference
-	Contact& add(const Contact& contact=Contact());
+	void add(const Contact& contact);
 	
 	//removes a contact by given element ( e.g. id ) or fullname
 	void remove(std::size_t element);
@@ -29,5 +29,5 @@ public:
 	
 	//methods for saving and writing all contacts
 	void save(const std::string& fileName) const;
-	void write(const std::string& fileName);
+	void load(const std::string& fileName);
 };
