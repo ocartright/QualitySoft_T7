@@ -7,8 +7,6 @@ class Contact {
 private:
    string firstName, lastName, streetAddress, email, phone, notes;
    
-   bool deleted;
-   
 public:
 	//constructors
 	Contact();
@@ -26,8 +24,6 @@ public:
 	const string& getPhone() const;
 	const string& getNotes() const;
 	
-	bool isDeleted() const;
-
 	//setters for private members
 	void setFullName(const string& fullName);
 	void setFirstName(const string& firstName);
