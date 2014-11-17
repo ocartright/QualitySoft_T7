@@ -7,6 +7,8 @@ class Contact {
 private:
    string firstName, lastName, streetAddress, email, phone, notes;
    
+   bool deleted;
+   
 public:
 	//constructors
 	Contact();
@@ -23,6 +25,8 @@ public:
 	const string& getEmail() const;
 	const string& getPhone() const;
 	const string& getNotes() const;
+	
+	bool isDeleted() const;
 
 	//setters for private members
 	void setFullName(const string& fullName);
@@ -32,6 +36,8 @@ public:
 	void setEmail(const string& email);
 	void setPhone(const string& phone);
 	void setNotes(const string& notes);
+	
+	void setDeleted(bool deleted);
 };
 
 // manages all contacts by creating, modifying, deleting and granting access to them
