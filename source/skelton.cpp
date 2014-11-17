@@ -32,8 +32,6 @@ public:
 	void setEmail(const string& email);
 	void setPhone(const string& phone);
 	void setNotes(const string& notes);
-	
-	void setDeleted(bool deleted);
 };
 
 // manages all contacts by creating, modifying, deleting and granting access to them
