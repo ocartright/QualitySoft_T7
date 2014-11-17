@@ -60,7 +60,7 @@ public:
 	const Contact& getContact(const string& fullName) const;
 	
 	//methods for saving and writing all contacts
-	void save(const string& fileName)const;
+	void save(const string& fileName) const;
 	void write(const string& fileName);
 };
 
@@ -76,7 +76,7 @@ public:
 	//main method
 	void main();
 	
-	//get a contact
+	//get a contact by asking the user
 	Contact & getContact() ;
 	const Contact & getContact() const;
 	
