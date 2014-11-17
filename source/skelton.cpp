@@ -1,4 +1,3 @@
-//Andy
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -9,37 +8,37 @@ private:
    string firstName, lastName, streetAddress, email, phone, notes;
    
 public:
-	//consutructors
-    Contact();
-    Contact(const string& fullName, const string& streetAddress, const string& email, 
-    		const string& phone, const string& notes);
-    Contact(const string& firstName, const string& lastName, const string& streetAddress, const string& email, 
-    		const string& phone, const string& notes);
+	//constructors
+	Contact();
+	Contact(const string& fullName, const string& streetAddress, const string& email, 
+			const string& phone, const string& notes);
+	Contact(const string& firstName, const string& lastName, const string& streetAddress, const string& email, 
+			const string& phone, const string& notes);
 
-    //getters for private members
-    string getFullName() const;
-    const string& getFirstName() const;
-    const string& getLastName() const;
-    const string& getStreetAddress() const;
-    const string& getEmail() const;
-    const string& getPhone() const;
-    const string& getNotes() const;
+	//getters for private members
+	string getFullName() const;
+	const string& getFirstName() const;
+	const string& getLastName() const;
+	const string& getStreetAddress() const;
+	const string& getEmail() const;
+	const string& getPhone() const;
+	const string& getNotes() const;
 
 	//setters for private members
 	void setFullName(const string& fullName);
-    void setFirstName(const string& firstName);
-    void setLastName(const string& lastName);
-    void setStreetAddress(const string& streetAddress);
-    void setEmail(const string& email);
-    void setPhone(const string& phone);
-    void setNotes(const string& notes);
+	void setFirstName(const string& firstName);
+	void setLastName(const string& lastName);
+	void setStreetAddress(const string& streetAddress);
+	void setEmail(const string& email);
+	void setPhone(const string& phone);
+	void setNotes(const string& notes);
 };
 
 // manages all contacts by creating, modifying, deleting and granting access to them
 class ContactManager {
 private:
-    vector<Contact> contacts;
-    
+	vector<Contact> contacts;
+	
 public:
 	// returns amount of contacts
 	size_t getSize() const;
@@ -126,7 +125,7 @@ public:
 	ContactManager& getContactManager();
 	const ContactManager& getContactManager() const;
 
-	//method main
+	//main method
 	int main(int size, char** arguments);
 };
 
