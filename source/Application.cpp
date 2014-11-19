@@ -15,7 +15,5 @@ const ContactManager& Application::getContactManager() const
 //main method
 int Application::main(int size, char** arguments)
 {
-	GraphicalUserInterface(*this).main();
-
 	return 0;
 }
