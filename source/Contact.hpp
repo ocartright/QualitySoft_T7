@@ -33,3 +33,4 @@ public:
 	void setPhone(const std::string& phone);
 	void setNotes(const std::string& notes);
 };
+
