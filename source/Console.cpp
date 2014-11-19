@@ -8,8 +8,8 @@ Console::Console(Application & application):
 {
 }
 
-//main method
-void Console::main()
+//if the console interface is used in the program, this method will be used to run the program
+void Console::run()
 {
 	while(input!=5)//or input<5
 	{
@@ -21,12 +21,15 @@ void Console::main()
 		switch(input)
 		{
 			case 1:
+				this->showContacts();
 				break;
 			case 2:
+				this->addContact();
 				break;
 			case 3:
 				break;
 			case 4:
+				this->removeContact();
 				break;
 		}
 	}

@@ -9,6 +9,9 @@ private:
 	Application& application;
 
 public:
+	//constructor
+	GraphicalUserInterface(Application& application);
+
 	// main method
 	void main();
 };

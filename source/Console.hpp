@@ -10,13 +10,12 @@ class Contact;
 class Console {
 private:
 	Application & application;
-
 public:
 	//constructor
 	Console(Application & application);
 
-	//main method
-	void main();
+	//if the console interface is used in the program, this method will be used to run the program
+	void run();
 	
 	//get a contact by asking the user
 	Contact* getContact() ;
