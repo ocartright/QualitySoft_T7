@@ -76,19 +76,25 @@ void modifyContact(const string& fullName)
 bool Console::run() {
 	showOptions();
 	userInput = getInput();
-	if(userInput == "1") {  //shows all saved contacts
+	
+	switch(userInput) {
+	case 1:
 		contactManager.showContacts();
-	} else if(userInput == "2") {  //enter a new contact
+		return true;
+	case 2:
 		Contact& newContact;
 		contactManager.addContact(newContact);
 		contactManager.save(newContact);
-	} else if(userInput == "3") {  //search contact(s) by full name
+		return true;
+	case 3:
 		searchQuery = console.getQuery();
 		contactManager.getContact(searchQuery);
-	} else if(userInput == "4") {  //remove a contact
+		return true;
+	case 4:
 		searchQuery = console.getQuery;
 		contactManager.remove(searchQuery);
-	} else if(userInput == "5") {  //exit the program
-		return false;  //this will be used in Application to stop te program
+		return true;
+	case 5:
+		return false;
 	}
 }
