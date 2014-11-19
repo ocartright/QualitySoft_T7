@@ -12,6 +12,26 @@ void ContactManager::add(const Contact& contact)
    this->contacts.push_back(contact);
 }
 
+//removes a contact by given element ( e.g. id ), object or fullname
+void ContactManager::remove(std::size_t element)
+{
+	this->contacts.erase(this->contacts.begin()+element);
+}
+void ContactManager::remove(const Contact& contact)
+{
+	for(std::vector<Contact>::iterator i=this->contacts.begin(); i!=this->contacts.end(); ++i)
+	{
+		if((&*i)==(&contact))
+		{
+			this->contacts.erase(i);
+			break;
+		}
+	}
+}
+void ContactManager::remove(const std::string& fullName)
+{
+}
+
 //get a contact by given element ( e.g. id )
 Contact* ContactManager::getContact(std::size_t element)
 {

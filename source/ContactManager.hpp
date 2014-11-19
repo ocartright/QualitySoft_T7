@@ -15,8 +15,9 @@ public:
 	//creates new contact and returns a reference
 	void add(const Contact& contact);
 	
-	//removes a contact by given element ( e.g. id ) or fullname
+	//removes a contact by given element ( e.g. id ), object or fullname
 	void remove(std::size_t element);
+	void remove(const Contact& contact);
 	void remove(const std::string& fullName);
 	
 	//get a contact by given element ( e.g. id )
