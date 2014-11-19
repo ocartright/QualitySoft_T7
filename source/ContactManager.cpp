@@ -33,7 +33,7 @@ void ContactManager::remove(const std::string& fullName)
 }
 
 //get a contact by given element ( e.g. id )
-Contact* ContactManager::getContact(std::size_t element)
+Contact* ContactManager::get(std::size_t element)
 {
    if (element < this->contacts.size())
       return &this->contacts[element];
@@ -41,13 +41,13 @@ Contact* ContactManager::getContact(std::size_t element)
    return nullptr;
 }
 
-const Contact* ContactManager::getContact(std::size_t element) const
+const Contact* ContactManager::get(std::size_t element) const
 {
-   return this->getContact(element);
+   return this->get(element);
 }
 
 //get a contact by given fullname
-Contact* ContactManager::getContact(const std::string& fullName)
+Contact* ContactManager::get(const std::string& fullName)
 {
    for (Contact &i : this->contacts)
    {
@@ -58,9 +58,9 @@ Contact* ContactManager::getContact(const std::string& fullName)
    return nullptr;
 }
 
-const Contact* ContactManager::getContact(const std::string& fullName) const
+const Contact* ContactManager::get(const std::string& fullName) const
 {
-   return this->getContact(fullName);
+   return this->get(fullName);
 }
 
 //methods for saving and writing all contacts

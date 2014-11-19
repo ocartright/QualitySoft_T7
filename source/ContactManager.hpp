@@ -21,12 +21,12 @@ public:
 	void remove(const std::string& fullName);
 	
 	//get a contact by given element ( e.g. id )
-	Contact* getContact(std::size_t element);
-	const Contact* getContact(std::size_t element) const;
+	Contact* get(std::size_t element);
+	const Contact* get(std::size_t element) const;
 	
 	//get a contact by given fullname
-	Contact* getContact(const std::string& fullName);
-	const Contact* getContact(const std::string& fullName) const;
+	Contact* get(const std::string& fullName);
+	const Contact* get(const std::string& fullName) const;
 	
 	//methods for saving and writing all contacts
 	void save(const std::string& fileName) const;

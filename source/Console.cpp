@@ -44,7 +44,7 @@ Contact* Console::getContact()
 	std::string query;
 	std::cin >> query ;
 	
-	Contact* contact=this->application.getContactManager().getContact(query);
+	Contact* contact=this->application.getContactManager().get(query);
 	
 	if(contact)
 		return contact;
@@ -78,7 +78,7 @@ void Console::showContact(const Contact& contact) const
 void Console::showContacts() const
 {
 	for(std::size_t i=0; i<this->application.getContactManager().getSize(); ++i)
-		this->showContact(*this->application.getContactManager().getContact(i));
+		this->showContact(*this->application.getContactManager().get(i));
 }
 
 //contact by getting the contact with console input, itself, element or fullName
