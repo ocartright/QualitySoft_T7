@@ -104,15 +104,6 @@ void Console::modifyContact()
 }
 void Console::modifyContact(Contact & contact)
 {
-	//?!?
-}
-//add a contact
-void Console::addContact()
-{
-	std::cout<<"New Contact Credentials:\n\n";
-
-	Contact contact;
-
 	std::string input;
 
 	std::cout<<"First Name: ";
@@ -138,6 +129,15 @@ void Console::addContact()
 	std::cout<<"Notes: ";
 	std::cin>>input;
 	contact.setNotes(input);
+}
+//add a contact
+void Console::addContact()
+{
+	std::cout<<"New Contact Credentials:\n\n";
+
+	Contact contact;
+	
+	this->modifyContact(contact);
 	
 	this->application.getContactManager().add(contact);
 	
