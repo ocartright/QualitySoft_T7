@@ -1,4 +1,5 @@
 #include "Console.hpp"
+
 /*
 Console::Console(Application & application):
 	application(application)
@@ -70,3 +71,24 @@ void modifyContact(std::size_t element)
 void modifyContact(const string& fullName)
 {
 }*/
+
+//if the console interface is used in the program, this method will be used to run the program
+bool Console::run() {
+	showOptions();
+	userInput = getInput();
+	if(userInput == "1") {  //shows all saved contacts
+		contactManager.showContacts();
+	} else if(userInput == "2") {  //enter a new contact
+		Contact& newContact;
+		contactManager.addContact(newContact);
+		contactManager.save(newContact);
+	} else if(userInput == "3") {  //search contact(s) by full name
+		searchQuery = console.getQuery();
+		contactManager.getContact(searchQuery);
+	} else if(userInput == "4") {  //remove a contact
+		searchQuery = console.getQuery;
+		contactManager.remove(searchQuery);
+	} else if(userInput == "5") {  //exit the program
+		return false;  //this will be used in Application to stop te program
+	}
+}
