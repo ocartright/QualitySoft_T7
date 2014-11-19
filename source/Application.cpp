@@ -14,5 +14,11 @@ const ContactManager& Application::getContactManager() const
 //main method
 int Application::main(int size, char** arguments)
 {
+	//while loop manages the program
+	bool programRunning;
+	while(programRunning) {
+		programRunning = console.run();  //console returns a false if user wants to exit the program
+	}
+
 	return 0;
 }
