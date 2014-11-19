@@ -104,4 +104,10 @@ void Console::modifyContact()
 }
 void Console::modifyContact(Contact & contact)
 {
+
+}
+//add a contact
+void Console::addContact()
+{
+	//todo::
 }
