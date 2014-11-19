@@ -1,5 +1,8 @@
 #include "Console.hpp"
-/*
+#include "Application.hpp"
+#include "ContactManager.hpp"
+#include <iostream>
+
 Console::Console(Application & application):
 	application(application)
 {
@@ -8,65 +11,96 @@ Console::Console(Application & application):
 //main method
 void Console::main()
 {
+	while(input!=5)//or input<5
+	{
+		std::cout<<"Options: (1) Show All Contacts | (2) Enter New Contact | (3) Search Contacts | (4) Remove Contact | (5) Exit\n--> ";
+		
+		unsigned char input=0;
+		std::cin>>input;
+		
+		switch(input)
+		{
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+		}
+	}
 }
 	
 //get a contact by asking the user
-Contact & Console::getContact() 
+Contact* Console::getContact() 
 {
+	std::cout << "Contact Query: " ;
+	
+	std::string query;
+	std::cin >> query ;
+	
+	Contact* contact=this->application.getContactManager().getContact(query);
+	
+	if(contact)
+		return contact;
+		
+	std::cout<<"‘"<<query<<"’ was not found in your contacts.";
+		
+	return nullptr;
 }
-const Contact & Console::getContact() const
+const Contact* Console::getContact() const
 {
+	return this->getContact();
 }
 
 //show a contact by getting the contact with console input, itself, element or fullName
 void Console::showContact() const
 {
+	const Contact* contact=this->getContact();
+	
+	if(contact)
+		this->showContact(*contact);
 }
 void Console::showContact(const Contact& contact) const
 {
-}
-void Console::showContact(std::size_t element) const
-{
-}
-void Console::showContact(const string& fullName) const
-{
+	std::cout<<contact.getFullName()<<"\n"
+			 <<contact.getStreetAddress()<<"\n"//todo: town, zipcode, state
+			 <<contact.getEmail()<<"\n"
+			 <<contact.getPhone()<<"\n\n";
 }
 
 //show all contacts
 void Console::showContacts() const
 {
-}
-void Console::showContactsByFirstName(const string& firstName) const
-{
-}
-void Console::showContactsByLastName(const string& lastName) const
-{
+	for(std::size_t i=0; i<this->application.getContactManager().getSize(); ++i)
+		this->showContact(this->application.getContactManager().getContact(i));
 }
 
 //contact by getting the contact with console input, itself, element or fullName
 void Console::removeContact()
 {
+	Contact* contact=this->getContact();
+	
+	if(contact)
+		this->removeContact(*contact);
 }
-void removeContact(Contact & contact)
+void Console::removeContact(Contact & contact)
 {
-}
-void removeContact(std::size_t element)
-{
-}
-void removeContact(const string& fullName)
-{
+	Contact* contact=this->getContact();
+	
+	if(contact)
+		this->application.getContactManager().remove(contact);
 }
 
 //modify a contact by getting the contact with console input, itself, element or fullName
-void modifyContact()
+void Console::modifyContact()
+{
+	Contact* contact=this->getContact();
+	
+	if(contact)
+		this->modifyContact(*contact);
+}
+void Console::modifyContact(Contact & contact)
 {
 }
-void modifyContact(Contact & contact)
-{
-}
-void modifyContact(std::size_t element)
-{
-}
-void modifyContact(const string& fullName)
-{
-}*/
