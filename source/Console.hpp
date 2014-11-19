@@ -10,7 +10,7 @@ class Contact;
 class Console {
 private:
 	Application & application;
-
+	string userInput, searchQuery;
 public:
 	//constructor
 	Console(Application & application);
