@@ -104,10 +104,43 @@ void Console::modifyContact()
 }
 void Console::modifyContact(Contact & contact)
 {
-
+	//?!?
 }
 //add a contact
 void Console::addContact()
 {
-	//todo::
+	std::cout<<"New Contact Credentials:\n\n";
+
+	Contact contact;
+
+	std::string input;
+
+	std::cout<<"First Name: ";
+	std::cin>>input;
+	contact.setFirstName(input);
+	
+	std::cout<<"Last Name: ";
+	std::cin>>input;
+	contact.setLastName(input);
+	
+	std::cout<<"Street Address: ";
+	std::cin>>input;
+	contact.setStreetAddress(input);
+	
+	std::cout<<"Email Address: ";
+	std::cin>>input;
+	contact.setEmail(input);
+	
+	std::cout<<"Phone Number: ";
+	std::cin>>input;
+	contact.setPhone(input);
+	
+	std::cout<<"Notes: ";
+	std::cin>>input;
+	contact.setNotes(input);
+	
+	this->application.getContactManager().add(contact);
+	
+	std::cout<<"\n\n*New Contact has been entered*";
+
 }
