@@ -13,5 +13,5 @@ public:
 	GraphicalUserInterface(Application& application);
 
 	// main method
-	void main();
+	void run();
 };

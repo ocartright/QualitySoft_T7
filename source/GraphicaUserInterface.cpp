@@ -12,9 +12,10 @@ GraphicalUserInterface::GraphicalUserInterface(Application& application):
 {
 }
 
-void GraphicalUserInterface::main()
+// main method
+void GraphicalUserInterface::run()
 {
-	Fl_Window* window=new Fl_Window(200,600);
+	Fl_Window* window=new Fl_Window(200, 600);
 	window->label("Contacts");
 
 	Fl_Select_Browser* browser=new Fl_Select_Browser(10, 10, 180, 580);
