@@ -1,4 +1,5 @@
 #include "ContactManager.hpp"
+#include <fstream>
 
 //returns amount of contacts
 size_t ContactManager::getSize() const
@@ -30,6 +31,14 @@ void ContactManager::remove(const Contact& contact)
 }
 void ContactManager::remove(const std::string& fullName)
 {
+    for(std::vector<Contact>::iterator i=this->contacts.begin(); i!=this->contacts.end(); ++i)
+	{
+		if(i->getFullName()==fullName)
+		{
+			this->contacts.erase(i);
+			break;
+		}
+	}
 }
 
 //get a contact by given element ( e.g. id )
