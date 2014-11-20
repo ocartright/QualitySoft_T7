@@ -11,7 +11,7 @@ Console::Console(Application & application):
 //if the console interface is used in the program, this method will be used to run the program
 void Console::run()
 {
-	unsigned char input=0;
+	unsigned int input=0;
 
 	while(input!=5)//or input<5
 	{
@@ -118,7 +118,7 @@ void Console::modifyContact(Contact & contact)
 	std::cin>>input;
 	contact.setAddress(input);
 
-	std::cout<<"Address: ";
+	std::cout<<"Email: ";
 	std::cin>>input;
 	contact.setEmail(input);
 

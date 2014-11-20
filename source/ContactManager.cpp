@@ -75,9 +75,9 @@ const Contact* ContactManager::get(const std::string& fullName) const
 //methods for saving and writing all contacts
 void ContactManager::save(const std::string& fileName) const
 {
-
+    std::ofstream file("contacts.txt");
 }
 void ContactManager::load(const std::string& fileName)
 {
-
+    std::ifstream file("contacts.txt");
 }
