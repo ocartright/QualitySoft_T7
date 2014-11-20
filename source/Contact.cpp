@@ -1,30 +1,29 @@
 #include "Contact.hpp"
 
-
 //constructors
 Contact::Contact() :
 	firstName(""),
 	lastName(""),
-	streetAddress(""),
+	address(""),
 	email(""),
 	phone(""),
 	notes("")
 {
 }
-Contact::Contact(const std::string& fullName, const std::string& streetAddress, const std::string& email,
+Contact::Contact(const std::string& fullName, const std::string& address, const std::string& email,
    const std::string& phone, const std::string& notes) :
-   streetAddress(streetAddress),
+   address(address),
    email(email),
    phone(phone),
    notes(notes)
 {
    this->setFullName(fullName);
 }
-Contact::Contact(const std::string& firstName, const std::string& lastName, const std::string& streetAddress, const std::string& email,
+Contact::Contact(const std::string& firstName, const std::string& lastName, const std::string& address, const std::string& email,
    const std::string& phone, const std::string& notes) :
    firstName(firstName),
    lastName(lastName),
-   streetAddress(streetAddress),
+   address(address),
    email(email),
    phone(phone),
    notes(notes)
@@ -46,9 +45,9 @@ const std::string& Contact::getLastName() const
 {
    return this->lastName;
 }
-const std::string& Contact::getStreetAddress() const
+const std::string& Contact::getAddress() const
 {
-   return this->streetAddress;
+   return this->address;
 }
 const std::string& Contact::getEmail() const
 {
@@ -87,9 +86,9 @@ void Contact::setLastName(const std::string& lastName)
 {
    this->lastName = lastName;
 }
-void Contact::setStreetAddress(const std::string& streetAddress)
+void Contact::setAddress(const std::string& address)
 {
-   this->streetAddress = streetAddress;
+   this->address = address;
 }
 void Contact::setEmail(const std::string& email)
 {
