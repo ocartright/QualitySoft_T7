@@ -1,6 +1,7 @@
 #include "Application.hpp"
 #include "ContactManager.hpp"
 #include "GraphicalUserInterface.hpp"
+//#include "Console.hpp"
 
 //getter for contactManager
 ContactManager& Application::getContactManager()
@@ -16,6 +17,7 @@ const ContactManager& Application::getContactManager() const
 int Application::main(int size, char** arguments)
 {
 	GraphicalUserInterface(*this).run();
-
+	//Console().run();
+	
 	return 0;
 }
