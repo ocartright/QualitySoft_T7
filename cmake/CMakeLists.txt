@@ -3,7 +3,7 @@ project ( QualitySoft )
 
 set ( CMAKE_CXX_FLAGS_DEBUG on )
 
-include_directories ( ${CMAKE_CURRENT_SOURCE_DIR}/../source )
+include_directories ( ${CMAKE_CURRENT_SOURCE_DIR}/../source ${CMAKE_CURRENT_SOURCE_DIR}/../dependencies/fltk )
 
 add_definitions ( -std=c++11 )
 
