@@ -18,7 +18,7 @@ int Application::main(int size, char** arguments)
 {
     this->contactManager.load("contacts.txt");
 
-    if(size>1 && std::string(arguments[1])==std::string("--nogui"))
+    if(size>1 && std::string(arguments[1])=="--nogui")
         Console(*this).run();
     else
         GraphicalUserInterface(*this).run();
