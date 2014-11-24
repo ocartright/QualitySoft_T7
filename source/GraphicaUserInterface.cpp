@@ -15,7 +15,12 @@ void GraphicalUserInterface::onSelect(Fl_Widget* widget, void* p)
 {
     GraphicalUserInterface* gui=static_cast<GraphicalUserInterface*>(p);
 
-    Contact* contact=gui->selectedContact = gui->application.getContactManager().get(gui->browser.value()-1);
+	Contact* contact=gui->application.getContactManager().get(gui->browser.value()-1);
+	
+	if(!contact)
+		return;
+		
+	gui->selectedContact=contact;
 
     gui->firstName.value(contact->getFirstName().c_str());
     gui->lastName.value(contact->getLastName().c_str());
