@@ -20,6 +20,11 @@
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Input.H>
 
+class Application;
+class Contact;
+class ContactManager;
+class Console;
+
 //represents a contact which stores its information
 class Contact {
 private:
