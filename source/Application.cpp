@@ -22,8 +22,7 @@ int Application::main(int size, char** arguments)
         Console(*this).run();
     else
         GraphicalUserInterface(*this).run();
-
-
+        
     this->contactManager.save("contacts.txt");
 
 	return 0;

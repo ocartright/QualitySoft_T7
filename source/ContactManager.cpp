@@ -72,12 +72,101 @@ const Contact* ContactManager::get(const std::string& fullName) const
    return this->get(fullName);
 }
 
+/*
+	fileformat
+	
+	[limiter] is a specified limiter, used for limiting all fields and all contacts
+	Indentation and break lines are only used for documentation and therefore not used in the fileformat itself
+	[limiter] is a nullbyte (ascii value is zero)
+	
+	[limiter]
+		[limiter][FullName][limiter]
+		[limiter][LastName][limiter]
+		[limiter][Address][limiter]
+		[limiter][Email][limiter]
+		[limiter][Phone][limiter]
+		[limiter][Notes][limiter]
+	[limiter]
+*/
+
 //methods for saving and writing all contacts
 void ContactManager::save(const std::string& fileName) const
 {
-    std::ofstream file("contacts.txt");
+	/*const char limiter=0;
+
+    std::ofstream file(fileName, std::ios::binary);
+    
+    for(auto contact:this->contacts)
+    {
+    	file.put(limiter);
+    	
+    	file.put(limiter);
+    	file.write(contact.getFirstName().c_str(), contact.getFirstName().size());
+    	file.put(limiter);
+    	
+    	file.put(limiter);
+    	file.write(contact.getLastName().c_str(), contact.getLastName().size());
+    	file.put(limiter);
+    	
+    	file.put(limiter);
+    	file.write(contact.getAddress().c_str(), contact.getAddress().size());
+    	file.put(limiter);
+    	
+    	file.put(limiter);
+    	file.write(contact.getEmail().c_str(), contact.getEmail().size());
+    	file.put(limiter);
+    	
+    	file.put(limiter);
+    	file.write(contact.getPhone().c_str(), contact.getPhone().size());
+    	file.put(limiter);
+    	
+    	file.put(limiter);
+    	file.write(contact.getNotes().c_str(), contact.getNotes().size());
+    	file.put(limiter);
+    	
+    	file.put(limiter);
+    }*/
+}
+
+#include <iostream>
+namespace
+{
+	std::string readField(std::ifstream& stream)
+	{
+		std::string field("");
+		char sign=0;
+	
+		while(!stream.eof()&&(sign=stream.get()))
+		{
+			field+=sign;
+		}
+		
+		return field;
+	}
 }
 void ContactManager::load(const std::string& fileName)
 {
-    std::ifstream file("contacts.txt");
+	/*std::cout << "ContactManager::load\n" ;
+
+    std::ifstream file(fileName, std::ios::binary);
+    
+    if(!file.is_open())
+    	return;
+    
+    while(!file.eof())
+    {
+    	//if(sign)
+    	//	continue;
+    	char sign=0;
+    	while(!file.eof()&&(sign=file.get()))
+		{
+			std::cout << sign;
+		}
+    		
+    	//Contact contact(readField(file), readField(file), readField(file), readField(file), readField(file), readField(file));
+    	
+    	//this->contacts.push_back(contact);
+    }
+    
+    std::cout.flush();*/
 }
