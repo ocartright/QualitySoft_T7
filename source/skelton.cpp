@@ -158,7 +158,7 @@ private:
 	static void onSave(Fl_Widget* widget, void* p);
 	static void onRemove(Fl_Widget* widget, void* p);
 
-	//reference to the user's currently selected contact
+	//pointer to the user's currently selected contact
 	Contact* selectedContact;
 
 	//browser updater
