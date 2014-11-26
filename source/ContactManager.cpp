@@ -42,7 +42,7 @@ void ContactManager::remove(const std::string& fullName)
 }
 
 //get a contact by given element ( e.g. id )
-Contact* ContactManager::get(std::size_t element)
+Contact* const ContactManager::get(std::size_t element)
 {
    if (element < this->contacts.size())
       return &this->contacts[element];
@@ -50,13 +50,13 @@ Contact* ContactManager::get(std::size_t element)
    return nullptr;
 }
 
-const Contact* ContactManager::get(std::size_t element) const
+const Contact* const ContactManager::get(std::size_t element) const
 {
    return this->get(element);
 }
 
 //get a contact by given fullname
-Contact* ContactManager::get(const std::string& fullName)
+Contact* const ContactManager::get(const std::string& fullName)
 {
    for (Contact &i : this->contacts)
    {
@@ -67,7 +67,7 @@ Contact* ContactManager::get(const std::string& fullName)
    return nullptr;
 }
 
-const Contact* ContactManager::get(const std::string& fullName) const
+const Contact* const ContactManager::get(const std::string& fullName) const
 {
    return this->get(fullName);
 }
@@ -127,8 +127,6 @@ void ContactManager::save(const std::string& fileName) const
     	file.put(limiter);
     }*/
 }
-
-#include <iostream>
 namespace
 {
 	std::string readField(std::ifstream& stream)
