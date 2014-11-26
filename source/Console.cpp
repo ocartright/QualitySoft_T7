@@ -28,6 +28,7 @@ void Console::run()
 				this->addContact();
 				break;
 			case 3:
+				this->getContact();
 				break;
 			case 4:
 				this->removeContact();
@@ -95,6 +96,7 @@ void Console::removeContact(Contact & contact)
 }
 
 //modify a contact by getting the contact with console input, itself, element or fullName
+/*--------------------------------------------- (not a required use case)
 void Console::modifyContact()
 {
 	Contact* contact=this->getContact();
@@ -130,6 +132,8 @@ void Console::modifyContact(Contact & contact)
 	std::cin>>input;
 	contact.setNotes(input);
 }
+---------------------------------------------*/
+
 //add a contact
 void Console::addContact()
 {
