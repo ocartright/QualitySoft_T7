@@ -102,3 +102,5 @@ void Contact::setNotes(const std::string& notes)
 {
    this->notes = notes;
 }
+
+/*dksajdkjasdkasdjaksd*/
