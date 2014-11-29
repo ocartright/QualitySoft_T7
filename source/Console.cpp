@@ -3,12 +3,14 @@
 #include "ContactManager.hpp"
 #include <iostream>
 
+/* User Interface that manages console input from the user and displays output in the console. */
 Console::Console(Application & application):
+	//the object can be instantiated and give one variable, the reference to the application that runs the program
 	application(application)
 {
 }
 
-//if the console interface is used in the program, this method will be used to run the program
+/* Used by the 'application' object to run the program if a console interface is being used in the program. */
 void Console::run()
 {
 	unsigned int input=0;
@@ -35,9 +37,10 @@ void Console::run()
 				break;
 		}
 	}
+	std::cout << "\n*Your contacts have been updated. Goodbye!*";
 }
 
-//get a contact by asking the user
+/* Returns a pointer to a Contact object, which is found using the user's input in the console. */
 Contact* Console::getContact()
 {
 	std::cout << "To search, enter a first name, last name, full name, zip code, email, or phone number.\n";
@@ -56,12 +59,13 @@ Contact* Console::getContact()
 
 	return nullptr;
 }
+/* Returns a pointer to a Contact object, which is found using the user's input in the console. */
 const Contact* Console::getContact() const
 {
 	return this->getContact();
 }
 
-//show a contact by getting the contact with console input, itself, element or fullName
+/* Shows a contact's credentials. */
 void Console::showContact() const
 {
 	const Contact* contact=this->getContact();
@@ -69,6 +73,7 @@ void Console::showContact() const
 	if(contact)
 		this->showContact(*contact);
 }
+/* Shows a specific contact's credentials that were retrieved by the getContact() method. */
 void Console::showContact(const Contact& contact) const
 {
 	std::cout<<contact.getFullName()<<"\n"
@@ -77,14 +82,14 @@ void Console::showContact(const Contact& contact) const
 			 <<contact.getPhone()<<"\n\n";
 }
 
-//show all contacts
+/* Shows credentials of all contacts in the 'contacts' vector. */
 void Console::showContacts() const
 {
 	for(std::size_t i=0; i<this->application.getContactManager().getSize(); ++i)
 		this->showContact(*this->application.getContactManager().get(i));
 }
 
-//contact by getting the contact with console input, itself, element or fullName
+/* Removes a Contact object from the 'contacts' vector */
 void Console::removeContact()
 {
 	Contact* contact=this->getContact();
@@ -92,12 +97,13 @@ void Console::removeContact()
 	if(contact)
 		this->removeContact(*contact);
 }
+/* Removes a specific Contact object, retrieved using the getContact() method, from the 'contacts' vector. */
 void Console::removeContact(Contact & contact)
 {
 	this->application.getContactManager().remove(contact);
 }
 
-//modify a contact by getting the contact with console input, itself, element or fullName
+/*//modify a contact by getting the contact with console input, itself, element or fullName
 void Console::modifyContact()
 {
 	Contact* contact=this->getContact();
@@ -132,9 +138,9 @@ void Console::modifyContact(Contact & contact)
 	std::cout<<"Notes: ";
 	std::cin>>input;
 	contact.setNotes(input);
-}
+}*/
 
-//add a contact
+/* Adds a new Contact object to the 'contacts' vector */
 void Console::addContact()
 {
 	std::cout<<"New Contact Credentials:\n\n";
