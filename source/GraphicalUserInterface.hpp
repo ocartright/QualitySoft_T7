@@ -14,24 +14,25 @@
 class Application;
 class Contact;
 
-//gui
+/* User Interface (Graphical) that manages input from a windowed canvas and displays output on the canvas. */
 class GraphicalUserInterface {
 private:
+	//used when instantiating a GraphicalUserInterface object. Specifies that an Application class will be using a GUI instead of a console interface.
 	Application& application;
-
-	//callbacks
+	
+	//pointer to the user's currently selected contact
+	Contact* selectedContact;
+	
+	//browser updater
+	void updateBrowser();
+	
+	/* Callback methods required by Widgets below */
 	static void onSelect(Fl_Widget* widget, void* p);
 	static void onAdd(Fl_Widget* widget, void* p);
 	static void onSave(Fl_Widget* widget, void* p);
 	static void onRemove(Fl_Widget* widget, void* p);
 
-	//current selected contact
-	Contact* selectedContact;
-
-	//browser
-	void updateBrowser();
-
-	//widgets
+	//widgets used for input
     Fl_Window window;
 	Fl_Select_Browser browser;
 	Fl_Button add;
@@ -45,9 +46,9 @@ private:
 	Fl_Input notes;
 
 public:
-	//constructor
+	//the object can be instantiated and give one variable, the reference to the application that runs the program
 	GraphicalUserInterface(Application& application);
 
-	// main method
+	/* Used by the 'application' object to run the program if a GUI is being used in the program. */
 	void run();
 };
