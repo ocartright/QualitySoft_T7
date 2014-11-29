@@ -1,23 +1,25 @@
 #include "ContactManager.hpp"
 #include <fstream>
 
-//returns amount of contacts
+/* Returns the size of the 'contacts' vector, which represents the number of stored contacts. */
 size_t ContactManager::getSize() const
 {
    return this->contacts.size();
 }
 
-//creates new contact and returns a reference
+/* Adds a new Contact object that was created either in the Console class or GUI class to the 'contacts' vector. */
 void ContactManager::add(const Contact& contact)
 {
    this->contacts.push_back(contact);
 }
 
-//removes a contact by given element ( e.g. id ), object or fullname
+//overloaded method: removes an existing contact using a given element
+/* Removes an existing contact using the position of the Contact in the 'contacts' vector. */
 void ContactManager::remove(std::size_t element)
 {
 	this->contacts.erase(this->contacts.begin()+element);
 }
+/* Removes an existing contact using a reference to a Contact object. */
 void ContactManager::remove(const Contact& contact)
 {
 	for(std::vector<Contact>::iterator i=this->contacts.begin(); i!=this->contacts.end(); ++i)
@@ -29,6 +31,7 @@ void ContactManager::remove(const Contact& contact)
 		}
 	}
 }
+/* Removes an existing contact using a reference to the contact's full name. */
 void ContactManager::remove(const std::string& fullName)
 {
     for(std::vector<Contact>::iterator i=this->contacts.begin(); i!=this->contacts.end(); ++i)
@@ -41,7 +44,8 @@ void ContactManager::remove(const std::string& fullName)
 	}
 }
 
-//get a contact by given element ( e.g. id )
+//overloaded method: returns a pointer to a Contact object using a given element
+/* Returns a reference to a Contact object using the position of the Contact in the 'contacts' vector. Contact object may be modified. */
 Contact* const ContactManager::get(std::size_t element)
 {
    if (element < this->contacts.size())
@@ -49,13 +53,12 @@ Contact* const ContactManager::get(std::size_t element)
 
    return nullptr;
 }
-
+/* Returns a pointer to a Contact object using the position of the Contact in the 'contacts' vector.  */
 const Contact* const ContactManager::get(std::size_t element) const
 {
    return this->get(element);
 }
-
-//get a contact by given fullname
+/* Returns a pointer to a Contact object using a reference to the contact's full name. May modify the reference to the object or the object itself. */
 Contact* const ContactManager::get(const std::string& fullName)
 {
    for (Contact &i : this->contacts)
@@ -66,7 +69,7 @@ Contact* const ContactManager::get(const std::string& fullName)
 
    return nullptr;
 }
-
+/* Returns a reference to a Contact object using a reference to the contact's full name. May not be modified at all. */
 const Contact* const ContactManager::get(const std::string& fullName) const
 {
    return this->get(fullName);
@@ -89,7 +92,7 @@ const Contact* const ContactManager::get(const std::string& fullName) const
 	[limiter]
 */
 
-//methods for saving and writing all contacts
+/* Writes all Contact objects in the 'contacts' vector into a specified file. */
 void ContactManager::save(const std::string& fileName) const
 {
 	/*const char limiter=0;
@@ -142,6 +145,8 @@ namespace
 		return field;
 	}
 }
+
+/* Retrieves all Contact objects in the 'contacts' vector from a specified file. */
 void ContactManager::load(const std::string& fileName)
 {
 	/*std::cout << "ContactManager::load\n" ;
