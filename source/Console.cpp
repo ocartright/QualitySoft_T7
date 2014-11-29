@@ -40,7 +40,9 @@ void Console::run()
 //get a contact by asking the user
 Contact* Console::getContact()
 {
-	std::cout << "Contact Query: " ;
+	std::cout << "To search, enter a first name, last name, full name, zip code, email, or phone number.\n";
+	
+	std::cout << "Contact Query\n--> ";
 
 	std::string query;
 	std::cin >> query ;
