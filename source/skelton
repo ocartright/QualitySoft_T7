@@ -154,6 +154,11 @@ public:
 	/* Shows credentials of all contacts in the 'contacts' vector. */
 	void showContacts() const;
 	
+	/* Modifies a Contact object. Used to enter information for a new Contact, which is retrieved with the getContact() method */
+	void modifyContact();
+	/* Modifies the Contact object sent in. */
+	void modifyContact(Contact & contact);
+	
 	/* Removes a Contact object from the 'contacts' vector */
 	void removeContact();
 	/* Removes a specific Contact object, retrieved using the getContact() method, from the 'contacts' vector. */
