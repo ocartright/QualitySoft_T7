@@ -1,3 +1,8 @@
+#pragma once
+
+#include <vector>
+#include "Contact.hpp"
+
 /* Manages all Contact objects. Creates new Contact objects and deletes and/or grants access to existing Contact objects. */
 class ContactManager {
 private:
