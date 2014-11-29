@@ -3,17 +3,18 @@
 #include "GraphicalUserInterface.hpp"
 #include "Console.hpp"
 
-//getter for contactManager
+/* Returns a reference to the application's contactManager object. */
 ContactManager& Application::getContactManager()
 {
 	return this->contactManager;
 }
+/* Returns a reference to the application's contactManager object. */
 const ContactManager& Application::getContactManager() const
 {
 	return this->contactManager;
 }
 
-//main method
+/* Used to run the ContactList application itself. Calls the run() method from either Console class or GraphicalUserInterface class */
 int Application::main(int size, char** arguments)
 {
     this->contactManager.load("contacts.txt");
