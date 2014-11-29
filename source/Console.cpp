@@ -107,7 +107,7 @@ void Console::removeContact(Contact & contact)
 	this->application.getContactManager().remove(contact);
 }
 
-/*//modify a contact by getting the contact with console input, itself, element or fullName
+/* Modifies a Contact object. Used to enter information for a new Contact, which is retrieved with the getContact() method */
 void Console::modifyContact()
 {
 	Contact* contact=this->getContact();
@@ -115,6 +115,7 @@ void Console::modifyContact()
 	if(contact)
 		this->modifyContact(*contact);
 }
+/* Modifies the Contact object sent in. */
 void Console::modifyContact(Contact & contact)
 {
 	std::string input;
