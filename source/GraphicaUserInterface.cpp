@@ -10,7 +10,7 @@
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Input.H>
 
-//callbacks
+/* Callback methods required by Widgets below */
 void GraphicalUserInterface::onSelect(Fl_Widget* widget, void* p)
 {
     GraphicalUserInterface* gui=static_cast<GraphicalUserInterface*>(p);
@@ -80,7 +80,8 @@ void GraphicalUserInterface::onRemove(Fl_Widget* widget, void* p)
     gui->phone.value("");
     gui->notes.value("");
 }
-//browser
+
+//browser updater
 void GraphicalUserInterface::updateBrowser()
 {
     this->browser.clear();
@@ -94,6 +95,7 @@ void GraphicalUserInterface::updateBrowser()
     this->selectedContact=nullptr;
 }
 
+//the object can be instantiated and give one variable, the reference to the application that runs the program
 GraphicalUserInterface::GraphicalUserInterface(Application& application):
 	application(application),
 	selectedContact(nullptr),
@@ -117,7 +119,7 @@ GraphicalUserInterface::GraphicalUserInterface(Application& application):
     this->updateBrowser();
 }
 
-// main method
+/* Used by the 'application' object to run the program if a GUI is being used in the program. */
 void GraphicalUserInterface::run()
 {
 	window.show();
