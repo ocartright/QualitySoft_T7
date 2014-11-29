@@ -43,20 +43,24 @@ void Console::run()
 /* Returns a pointer to a Contact object, which is found using the user's input in the console. */
 Contact* Console::getContact()
 {
-	std::cout << "To search, enter a first name, last name, full name, zip code, email, or phone number.\n";
-	
-	std::cout << "Contact Query\n--> ";
-
-	std::string query;
-	std::cin >> query ;
-
-	Contact* contact=this->application.getContactManager().get(query);
-
-	if(contact)
-		return contact;
-
-	std::cout<<"‘"<<query<<"’ was not found in your contacts.";
-
+	bool userSearching;
+	while(userSearching) {
+		std::cout << "To search, enter a first name, last name, full name, zip code, email, or phone number. To go back, etner 'goback'\n";
+		
+		std::cout << "Contact Query\n--> ";
+		
+		std::string query;
+		std::cin >> query ;
+		
+		if(query != "goback") {
+			Contact* contact=this->application.getContactManager().get(query);
+			if(contact)
+				return contact;
+			
+			std::cout<<"\n‘"<<query<<"’ was not found in your contacts.\n";
+		}
+		userSearching = false;
+	}
 	return nullptr;
 }
 /* Returns a pointer to a Contact object, which is found using the user's input in the console. */
@@ -77,9 +81,9 @@ void Console::showContact() const
 void Console::showContact(const Contact& contact) const
 {
 	std::cout<<contact.getFullName()<<"\n"
-			 <<contact.getAddress()<<"\n"//todo: town, zipcode, state
-			 <<contact.getEmail()<<"\n"
-			 <<contact.getPhone()<<"\n\n";
+	 	 <<contact.getAddress()<<"\n"//todo: town, zipcode, state
+		 <<contact.getEmail()<<"\n"
+		 <<contact.getPhone()<<"\n\n";
 }
 
 /* Shows credentials of all contacts in the 'contacts' vector. */
