@@ -29,8 +29,8 @@ class Console;
 /* Represents a single contact and hold all the information about that contact. */
 class Contact {
 private:
-   //general information about the contact that the user would be interested in
-   std::string firstName, lastName, address, email, phone, notes;
+	//general information about the contact that the user would be interested in
+	std::string firstName, lastName, address, email, phone, notes;
 
 public:
 	//class constructors for the Contact class
@@ -71,7 +71,7 @@ public:
 	void setEmail(const std::string& email);
 	/* Sets the contact's phone number as a string. */
 	void setPhone(const std::string& phone);
-	/* Sets a special notes about the contact as a string. */
+	/* Sets a special note about the contact as a string. */
 	void setNotes(const std::string& notes);
 };
 
@@ -98,14 +98,31 @@ public:
 	
 	//overloaded method: returns a pointer to a Contact object using a given element
 	/* Returns a reference to a Contact object using the position of the Contact in the 'contacts' vector. Contact object may be modified. */
-	Contact* get(std::size_t element);
+	Contact* const get(std::size_t element);
 	/* Returns a pointer to a Contact object using the position of the Contact in the 'contacts' vector.  */
-	const Contact* get(std::size_t element) const;
+	const Contact* const get(std::size_t element) const;
 	/* Returns a pointer to a Contact object using a reference to the contact's full name. May modify the reference to the object or the object itself. */
-	Contact* get(const std::string& fullName);
+	Contact* const get(const std::string& fullName);
 	/* Returns a reference to a Contact object using a reference to the contact's full name. May not be modified at all. */
-	const Contact* get(const std::string& fullName) const;
-	
+	const Contact* const get(const std::string& fullName) const;
+
+	/*
+		fileformat
+		
+		[limiter] is a specified limiter, used for limiting all fields and all contacts
+		Indentation and break lines are only used for documentation and therefore not used in the fileformat itself
+		[limiter] is a nullbyte (ascii value is zero)
+		
+		[limiter]
+			[limiter][FullName][limiter]
+			[limiter][LastName][limiter]
+			[limiter][Address][limiter]
+			[limiter][Email][limiter]
+			[limiter][Phone][limiter]
+			[limiter][Notes][limiter]
+		[limiter]
+	*/	
+
 	/* Writes all Contact objects in the 'contacts' vector into a specified file. */
 	void save(const std::string& fileName) const;
 	/* Retrieves all Contact objects in the 'contacts' vector from a specified file. */
@@ -151,18 +168,18 @@ class GraphicalUserInterface {
 private:
 	//used when instantiating a GraphicalUserInterface object. Specifies that an Application class will be using a GUI instead of a console interface.
 	Application& application;
-
+	
+	//pointer to the user's currently selected contact
+	Contact* selectedContact;
+	
+	//browser updater
+	void updateBrowser();
+	
 	/* Callback methods required by Widgets below */
 	static void onSelect(Fl_Widget* widget, void* p);
 	static void onAdd(Fl_Widget* widget, void* p);
 	static void onSave(Fl_Widget* widget, void* p);
 	static void onRemove(Fl_Widget* widget, void* p);
-
-	//pointer to the user's currently selected contact
-	Contact* selectedContact;
-
-	//browser updater
-	void updateBrowser();
 
 	//widgets used for input
     Fl_Window window;
@@ -194,14 +211,14 @@ private:
 public:
 	/* Returns a reference to the application's contactManager object. */
 	ContactManager& getContactManager();
+	/* Returns a reference to the application's contactManager object. */
 	const ContactManager& getContactManager() const;
 
 	/* Used to run the ContactList application itself. Calls the run() method from either Console class or GraphicalUserInterface class */
 	int main(int size, char** arguments);
 };
 
-int main (int size, char** arguments)
-{
+int main (int size, char** arguments) {
 	//calls the main() method in class Application, which then calls the run() method to run the program (either from the Console class or GraphicalUserInterface class)
 	return Application().main(size, arguments);
 }
