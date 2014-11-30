@@ -9,7 +9,7 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Input.H>
-#include <FL/Fl_Ask.H>
+#include <FL/fl_ask.H>
 
 /* Callback methods required by Widgets below */
 void GraphicalUserInterface::onSelect(Fl_Widget* widget, void* p)
