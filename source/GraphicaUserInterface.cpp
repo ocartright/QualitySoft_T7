@@ -34,9 +34,9 @@ void GraphicalUserInterface::onAdd(Fl_Widget* widget, void* p)
 {
     GraphicalUserInterface* gui=static_cast<GraphicalUserInterface*>(p);
     
-    if(!strlen(gui->firstName.value()) || !strlen(gui->lastName.value()))
+    if(!strlen(gui->lastName.value()))
     {
-        fl_alert("$MESSAGE");
+        fl_alert("The Last Name is a required field!");
         return;
     }
     
