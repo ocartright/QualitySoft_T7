@@ -9,6 +9,7 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Input.H>
+#include <FL/Fl_Ask.H>
 
 /* Callback methods required by Widgets below */
 void GraphicalUserInterface::onSelect(Fl_Widget* widget, void* p)
@@ -32,7 +33,13 @@ void GraphicalUserInterface::onSelect(Fl_Widget* widget, void* p)
 void GraphicalUserInterface::onAdd(Fl_Widget* widget, void* p)
 {
     GraphicalUserInterface* gui=static_cast<GraphicalUserInterface*>(p);
-
+    
+    if(!strlen(gui->firstName.value()) || !strlen(gui->lastName.value()))
+    {
+        fl_alert("$MESSAGE");
+        return;
+    }
+    
     Contact contact;
 
     contact.setFirstName(gui->firstName.value());
