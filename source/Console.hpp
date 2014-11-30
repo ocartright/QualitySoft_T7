@@ -31,8 +31,9 @@ public:
 	/* Shows credentials of all contacts in the 'contacts' vector. */
 	void showContacts() const;
 	
-	/*//modify a contact by getting the contact with console input, itself, element or fullName
+	/* Modifies a Contact object. Used to enter information for a new Contact, which is retrieved with the getContact() method */
 	void modifyContact();
+	/* Modifies the Contact object sent in. */
 	void modifyContact(Contact & contact);*/
 	
 	/* Removes a Contact object from the 'contacts' vector */
