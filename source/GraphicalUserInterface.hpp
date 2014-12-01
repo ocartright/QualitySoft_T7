@@ -1,3 +1,8 @@
+/*
+ *Created By: Justus Flerlage
+ *Edited By: Justus Flerlage, Orion Vuong
+ */
+
 #pragma once
 
 #include <FL/Fl_Widget.H>
@@ -9,6 +14,7 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Input.H>
+#include <FL/fl_ask.H>
 
 //forward delcaration
 class Application;
