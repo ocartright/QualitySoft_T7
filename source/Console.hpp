@@ -1,3 +1,8 @@
+/*
+ *Created By: Justus Flerlage
+ *Edited By: Justus Flerlage
+ */
+
 #pragma once
 
 #include <string>
