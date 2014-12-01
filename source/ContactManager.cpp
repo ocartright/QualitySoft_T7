@@ -1,3 +1,8 @@
+/*
+ *Created By: Justus Flerlage
+ *Edited By: Andy Alameddine
+ */
+
 #include "ContactManager.hpp"
 #include <fstream>
 
