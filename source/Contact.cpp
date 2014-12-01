@@ -1,3 +1,8 @@
+/*
+ *Created By: Justus Flerlage
+ *Edited By: Justus Flerlage, Andy Alameddine
+ */
+
 #include "Contact.hpp"
 
 /* Represents a single contact and hold all the information about that contact. */
