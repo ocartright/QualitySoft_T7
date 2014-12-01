@@ -1,3 +1,8 @@
+/* 
+ *Created By: Justus Flerlage
+ *Edited By: Justus Flerlage, Orion Vuong
+ */
+
 #include "Application.hpp"
 #include "ContactManager.hpp"
 #include "GraphicalUserInterface.hpp"
