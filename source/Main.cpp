@@ -1,3 +1,8 @@
+/*
+ *Created By: Justus Flerlage
+ *No Editors
+ */
+
 #include "Application.hpp"
 
 int main (int size, char** arguments)
