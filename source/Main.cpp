@@ -1,6 +1,6 @@
 /*
  *Created By: Justus Flerlage
- *No Editors
+ *Edited By: Justus Flerlage
  */
 
 #include "Application.hpp"
