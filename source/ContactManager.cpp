@@ -1,3 +1,8 @@
+/*
+ *Created By: Justus Flerlage
+ *Edited By: Andy Alameddine
+ */
+
 #include "ContactManager.hpp"
 #include <fstream>
 
@@ -95,39 +100,39 @@ const Contact* const ContactManager::get(const std::string& fullName) const
 /* Writes all Contact objects in the 'contacts' vector into a specified file. */
 void ContactManager::save(const std::string& fileName) const
 {
-	/*const char limiter=0;
+	/*const char delimiter=0;
 
     std::ofstream file(fileName, std::ios::binary);
     
     for(auto contact:this->contacts)
     {
-    	file.put(limiter);
+    	file.put(delimiter);
     	
-    	file.put(limiter);
+    	file.put(delimiter);
     	file.write(contact.getFirstName().c_str(), contact.getFirstName().size());
-    	file.put(limiter);
+    	file.put(delimiter);
     	
-    	file.put(limiter);
+    	file.put(delimiter);
     	file.write(contact.getLastName().c_str(), contact.getLastName().size());
-    	file.put(limiter);
+    	file.put(delimiter);
     	
-    	file.put(limiter);
+    	file.put(delimiter);
     	file.write(contact.getAddress().c_str(), contact.getAddress().size());
-    	file.put(limiter);
+    	file.put(delimiter);
     	
-    	file.put(limiter);
+    	file.put(delimiter);
     	file.write(contact.getEmail().c_str(), contact.getEmail().size());
-    	file.put(limiter);
+    	file.put(delimiter);
     	
-    	file.put(limiter);
+    	file.put(delimiter);
     	file.write(contact.getPhone().c_str(), contact.getPhone().size());
-    	file.put(limiter);
+    	file.put(delimiter);
     	
-    	file.put(limiter);
+    	file.put(delimiter);
     	file.write(contact.getNotes().c_str(), contact.getNotes().size());
-    	file.put(limiter);
+    	file.put(delimiter);
     	
-    	file.put(limiter);
+    	file.put(delimiter);
     }*/
 }
 namespace

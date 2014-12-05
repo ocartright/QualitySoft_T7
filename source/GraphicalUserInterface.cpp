@@ -1,6 +1,19 @@
+/*
+ *Created By: Justus Flerlage
+ *Edited By: Justus Flerlage, Orion Vuong
+ */
+
 #include "GraphicalUserInterface.hpp"
 #include "Application.hpp"
 #include "Contact.hpp"
+#include <FL/Fl.H>
+#include <FL/Fl_Window.H>
+#include <FL/Fl_Box.H>
+#include <FL/Fl_Select_Browser.H>
+#include <FL/Fl_Group.H>
+#include <FL/Fl_Button.H>
+#include <FL/Fl_Pack.H>
+#include <FL/Fl_Input.H>
 #include <FL/fl_ask.H>
 
 /* Callback methods required by Widgets below */
@@ -26,12 +39,12 @@ void GraphicalUserInterface::onAdd(Fl_Widget* widget, void* p)
 {
     GraphicalUserInterface* gui=static_cast<GraphicalUserInterface*>(p);
     
-    if(!strlen(gui->firstName.value()) || !strlen(gui->lastName.value()))
+    if(!strlen(gui->lastName.value()))
     {
-    	fl_alert("$MESSAGE");
-    	return;
+        fl_alert("The Last Name is a required field!");
+        return;
     }
-
+    
     Contact contact;
 
     contact.setFirstName(gui->firstName.value());
