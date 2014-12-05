@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <vector>
 #include <FL/Fl_Widget.H>
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>
@@ -25,18 +26,19 @@ class GraphicalUserInterface {
 private:
 	//used when instantiating a GraphicalUserInterface object. Specifies that an Application class will be using a GUI instead of a console interface.
 	Application& application;
-	
+
 	//pointer to the user's currently selected contact
 	Contact* selectedContact;
-	
+
 	//browser updater
 	void updateBrowser();
-	
+
 	/* Callback methods required by Widgets below */
 	static void onSelect(Fl_Widget* widget, void* p);
 	static void onAdd(Fl_Widget* widget, void* p);
 	static void onSave(Fl_Widget* widget, void* p);
 	static void onRemove(Fl_Widget* widget, void* p);
+	static void onSearch(Fl_Widget* widget, void* p);
 
 	//widgets used for input
     Fl_Window window;
@@ -50,6 +52,10 @@ private:
 	Fl_Input email;
 	Fl_Input phone;
 	Fl_Input notes;
+	Fl_Input search;
+
+	//vector for mapping element of our browser to element of our contactManager
+	std::vector <std::size_t> contactMap;
 
 public:
 	//the object can be instantiated and give one variable, the reference to the application that runs the program
