@@ -143,7 +143,7 @@ void Console::modifyContact(Contact & contact)
 	std::cout<<"Notes: ";
 	std::cin>>input;
 	contact.setNotes(input);
-}*/
+}
 
 /* Adds a new Contact object to the 'contacts' vector */
 void Console::addContact()
