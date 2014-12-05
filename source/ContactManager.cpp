@@ -15,7 +15,8 @@ size_t ContactManager::getSize() const
 /* Adds a new Contact object that was created either in the Console class or GUI class to the 'contacts' vector. */
 void ContactManager::add(const Contact& contact)
 {
-   this->contacts.push_back(contact);
+	if(!contact.getLastName().empty())
+		this->contacts.push_back(contact);
 }
 
 //overloaded method: removes an existing contact using a given element
