@@ -5,6 +5,7 @@
 
 #include "ContactManager.hpp"
 #include <fstream>
+#include "pugixml.hpp"
 
 /* Returns the size of the 'contacts' vector, which represents the number of stored contacts. */
 size_t ContactManager::getSize() const
@@ -81,101 +82,42 @@ const Contact* const ContactManager::get(const std::string& fullName) const
    return this->get(fullName);
 }
 
-/*
-	fileformat
-	
-	[limiter] is a specified limiter, used for limiting all fields and all contacts
-	Indentation and break lines are only used for documentation and therefore not used in the fileformat itself
-	[limiter] is a nullbyte (ascii value is zero)
-	
-	[limiter]
-		[limiter][FullName][limiter]
-		[limiter][LastName][limiter]
-		[limiter][Address][limiter]
-		[limiter][Email][limiter]
-		[limiter][Phone][limiter]
-		[limiter][Notes][limiter]
-	[limiter]
-*/
-
 /* Writes all Contact objects in the 'contacts' vector into a specified file. */
 void ContactManager::save(const std::string& fileName) const
 {
-	/*const char delimiter=0;
+    pugi::xml_document doc;
 
-    std::ofstream file(fileName, std::ios::binary);
-    
-    for(auto contact:this->contacts)
+    for(auto i:this->contacts)
     {
-    	file.put(delimiter);
-    	
-    	file.put(delimiter);
-    	file.write(contact.getFirstName().c_str(), contact.getFirstName().size());
-    	file.put(delimiter);
-    	
-    	file.put(delimiter);
-    	file.write(contact.getLastName().c_str(), contact.getLastName().size());
-    	file.put(delimiter);
-    	
-    	file.put(delimiter);
-    	file.write(contact.getAddress().c_str(), contact.getAddress().size());
-    	file.put(delimiter);
-    	
-    	file.put(delimiter);
-    	file.write(contact.getEmail().c_str(), contact.getEmail().size());
-    	file.put(delimiter);
-    	
-    	file.put(delimiter);
-    	file.write(contact.getPhone().c_str(), contact.getPhone().size());
-    	file.put(delimiter);
-    	
-    	file.put(delimiter);
-    	file.write(contact.getNotes().c_str(), contact.getNotes().size());
-    	file.put(delimiter);
-    	
-    	file.put(delimiter);
-    }*/
-}
-namespace
-{
-	std::string readField(std::ifstream& stream)
-	{
-		std::string field("");
-		char sign=0;
-	
-		while(!stream.eof()&&(sign=stream.get()))
-		{
-			field+=sign;
-		}
-		
-		return field;
-	}
-}
+        pugi::xml_node node=doc.append_child("contact");
 
+        node.append_attribute("firstName")=i.getFirstName().c_str();
+        node.append_attribute("lastName")=i.getFirstName().c_str();
+        node.append_attribute("address")=i.getAddress().c_str();
+        node.append_attribute("email")=i.getEmail().c_str();
+        node.append_attribute("phone")=i.getPhone().c_str();
+        node.append_attribute("notes")=i.getNotes().c_str();
+    }
+
+    doc.save_file(fileName.c_str());
+}
 /* Retrieves all Contact objects in the 'contacts' vector from a specified file. */
 void ContactManager::load(const std::string& fileName)
 {
-	/*std::cout << "ContactManager::load\n" ;
+    pugi::xml_document doc;
 
-    std::ifstream file(fileName, std::ios::binary);
-    
-    if(!file.is_open())
-    	return;
-    
-    while(!file.eof())
+    if(!doc.load_file(fileName.c_str()))
+        return;
+
+    for(auto i:doc)
     {
-    	//if(sign)
-    	//	continue;
-    	char sign=0;
-    	while(!file.eof()&&(sign=file.get()))
-		{
-			std::cout << sign;
-		}
-    		
-    	//Contact contact(readField(file), readField(file), readField(file), readField(file), readField(file), readField(file));
-    	
-    	//this->contacts.push_back(contact);
+        Contact contact(i.attribute("firstName").as_string(),
+                        i.attribute("lastName").as_string(),
+                        i.attribute("address").as_string(),
+                        i.attribute("email").as_string(),
+                        i.attribute("phone").as_string(),
+                        i.attribute("notes").as_string());
+
+        this->contacts.push_back(contact);
     }
-    
-    std::cout.flush();*/
 }
