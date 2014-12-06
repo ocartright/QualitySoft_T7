@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="QualitySoft" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/justus/Desktop/qualitysoft/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="application">
+         <Option output="/home/justus/Desktop/qualitysoft/build/application" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/justus/Desktop/qualitysoft/build" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/justus/Desktop/qualitysoft/cmake/../dependencies/fltk" />
+            <Add directory="/home/justus/Desktop/qualitysoft/cmake/../source" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 application" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="application/fast">
+         <Option output="/home/justus/Desktop/qualitysoft/build/application" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/justus/Desktop/qualitysoft/build" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/justus/Desktop/qualitysoft/cmake/../dependencies/fltk" />
+            <Add directory="/home/justus/Desktop/qualitysoft/cmake/../source" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 application/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/justus/Desktop/qualitysoft/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/justus/Desktop/qualitysoft/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/justus/Desktop/qualitysoft/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/Application.cpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/Console.cpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/Contact.cpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/ContactManager.cpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/GraphicalUserInterface.cpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/Main.cpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/pugixml.cpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/Application.hpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/Console.hpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/Contact.hpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/ContactManager.hpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/GraphicalUserInterface.hpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/pugiconfig.hpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/pugixml.hpp">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/source/skelton">
+      </Unit>
+      <Unit filename="/home/justus/Desktop/qualitysoft/cmake/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

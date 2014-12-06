@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/justus/Desktop/qualitysoft/source/Contact.hpp
+string
+-
+
+/home/justus/Desktop/qualitysoft/source/ContactManager.cpp
+ContactManager.hpp
+/home/justus/Desktop/qualitysoft/source/ContactManager.hpp
+fstream
+-
+pugixml.hpp
+/home/justus/Desktop/qualitysoft/source/pugixml.hpp
+iostream
+-
+
+/home/justus/Desktop/qualitysoft/source/ContactManager.hpp
+vector
+-
+Contact.hpp
+/home/justus/Desktop/qualitysoft/source/Contact.hpp
+
+/home/justus/Desktop/qualitysoft/source/pugiconfig.hpp
+
+/home/justus/Desktop/qualitysoft/source/pugixml.hpp
+pugiconfig.hpp
+/home/justus/Desktop/qualitysoft/source/pugiconfig.hpp
+stddef.h
+-
+exception
+-
+iterator
+-
+iosfwd
+-
+string
+-
+

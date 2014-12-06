@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<contact firstName="Test" lastName="Test" address="1" email="2" phone="3" notes="4" />
+<contact firstName="Test1" lastName="Test1" address="1" email="2" phone="3" notes="4" />
+<contact firstName="Test2" lastName="Test2" address="1" email="2" phone="3" notes="4" />

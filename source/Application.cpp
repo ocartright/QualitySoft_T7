@@ -22,14 +22,14 @@ const ContactManager& Application::getContactManager() const
 /* Used to run the ContactList application itself. Calls the run() method from either Console class or GraphicalUserInterface class */
 int Application::main(int size, char** arguments)
 {
-    this->contactManager.load("contacts.txt");
+    this->contactManager.load("contacts.xml");
 
     if(size>1 && std::string(arguments[1])=="--nogui")
         Console(*this).run();
     else
         GraphicalUserInterface(*this).run();
         
-    this->contactManager.save("contacts.txt");
+    this->contactManager.save("contacts.xml");
     
 	return 0;
 }
