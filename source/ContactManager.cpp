@@ -92,7 +92,7 @@ void ContactManager::save(const std::string& fileName) const
         pugi::xml_node node=doc.append_child("contact");
 
         node.append_attribute("firstName")=i.getFirstName().c_str();
-        node.append_attribute("lastName")=i.getFirstName().c_str();
+        node.append_attribute("lastName")=i.getLastName().c_str();
         node.append_attribute("address")=i.getAddress().c_str();
         node.append_attribute("email")=i.getEmail().c_str();
         node.append_attribute("phone")=i.getPhone().c_str();
